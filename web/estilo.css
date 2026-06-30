@@ -1,0 +1,110 @@
+body 
+{
+    background-color: #000000;
+    text-align: center;
+}
+
+h2 
+{
+    font-size: 30px;
+    color: #f0f0f0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#form_registro 
+{
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background: linear-gradient(to bottom, #5026e7, #081986);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    input[type="text"],
+    input[type="number"] 
+    {
+        width: 20%;
+        padding: 10px 10px;
+        margin: 2px 0;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"][value="Agregar"],
+    input[type="submit"][value="Modificar"]
+    {
+        background: linear-gradient(to right, #80e726, #088621);
+        color: white;
+        padding: 12px 20px;
+        border: 1px solid #ededed;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 10%;
+
+        &:hover 
+            {
+            background: linear-gradient(to right, #6bc81f, #066e1a);
+            }
+    }
+}
+
+table 
+{
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #d4d4d4;
+    box-shadow: 0 4px 20px rgba(216, 216, 216, 0.1);
+
+    th 
+    {
+        color: white;
+        padding: 12px;
+        border: 1px solid #ddd;
+        background-color: #230bab;
+    }
+
+    td 
+    {
+        background-color: #f9f9f9;
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+
+    input[type="submit"][value="Editar"]
+    {
+        background: linear-gradient(to right, #13dce0, #12a2eb);
+        color: white;
+        padding: 12px 20px;
+        border: 1px solid #ededed;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover 
+            {
+            background: linear-gradient(to right, #10c4c8, #0e8ad1);
+            }
+    }
+
+    input[type="submit"][value="Eliminar"] 
+    {
+        background: linear-gradient(to right, #df3e1d, #ab0505);
+        color: white;
+        padding: 12px 20px;
+        border: 1px solid #ededed;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover 
+            {
+            background: linear-gradient(to right, #c93516, #8f0404);
+            }
+    }
+}
