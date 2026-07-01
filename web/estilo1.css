@@ -1,114 +1,70 @@
-/* estilo1.css - Diseño moderno inspirado en tu estilo original */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* estilo1.css */
 
 body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #f0f0f0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
     padding: 40px 20px;
-    background-attachment: fixed;
+    color: #333;
+    line-height: 1.5;
+}
+
+#form_registro {
+    background: white;
+    max-width: 380px;
+    margin: 30px auto;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
-    font-size: 32px;
-    color: #ffffff;
-    margin-bottom: 25px;
     text-align: center;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Mensaje de error o éxito */
-p {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffeb3b;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    max-width: 400px;
-    text-align: center;
-    border: 1px solid rgba(255, 235, 59, 0.3);
-}
-
-/* Contenedor de formularios */
-.form-container {
-    background: linear-gradient(to bottom, #5026e7, #081986);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    padding: 35px 40px;
-    width: 100%;
-    max-width: 420px;
-    margin: 15px 0;
-    transition: transform 0.3s ease;
-}
-
-.form-container:hover {
-    transform: translateY(-5px);
-}
-
-.form-container input {
-    width: 100%;
-    padding: 14px 16px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    font-weight: 500;
     color: #222;
-    transition: all 0.3s ease;
 }
 
-.form-container input:focus {
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+input:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(128, 231, 38, 0.5);
-    transform: scale(1.02);
+    border-color: #666;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
-.form-container input[type="submit"] {
-    background: linear-gradient(to right, #80e726, #088621);
+input[type="submit"] {
+    background: #222;
     color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 14px;
-    margin-top: 15px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-top: 8px;
+    padding: 13px;
 }
 
-.form-container input[type="submit"]:hover {
-    background: linear-gradient(to right, #6bc81f, #066e1a);
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(128, 231, 38, 0.4);
+input[type="submit"]:hover {
+    background: #000;
 }
 
-/* Estilos específicos para cada formulario */
-#form_registro:nth-of-type(1) h2 {
-    color: #a0ff9f;
-}
-
-#form_registro:nth-of-type(2) h2 {
-    color: #ffd700;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .form-container {
-        padding: 25px 20px;
-        margin: 10px 0;
-    }
-    
-    h2 {
-        font-size: 28px;
-    }
+p {
+    text-align: center;
+    padding: 12px;
+    background: #ffebee;
+    color: #c62828;
+    border-radius: 8px;
+    max-width: 380px;
+    margin: 20px auto;
 }

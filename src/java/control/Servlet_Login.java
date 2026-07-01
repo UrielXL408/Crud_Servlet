@@ -45,15 +45,25 @@ public class Servlet_Login extends HttpServlet
                     usuario.setAPaterno(request.getParameter("tfAPaterno"));
                     usuario.setAMaterno(request.getParameter("tfAMaterno"));
                     usuario.setCorreo(correo);
-
-                    String contrasenaPlano = request.getParameter("tfContrasena");
-                    usuario.setContrasena(contrasenaPlano);
-
+                    usuario.setContrasena(request.getParameter("tfContrasena"));
                     usuario.setEstado("Aprobado");
 
                     dao.agregar(usuario);
-                    mensaje = "Registro exitoso. Ya puedes iniciar sesion.";
+                    mensaje = "Registro exitoso. Revisa tu correo y haz clic en el link para activar tu cuenta.";
                 }
+
+                request.setAttribute("mensaje", mensaje);
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+                rd.forward(request, response);
+            }
+            else if ("Verificar".equals(accion))
+            {
+                dao = new DAOUsuario();
+                String token = request.getParameter("token");
+
+                boolean ok = dao.verificarToken(token);
+                mensaje = ok ? "Correo verificado correctamente. Ya puedes iniciar sesion."
+                             : "El link de verificacion no es valido o ya fue usado.";
 
                 request.setAttribute("mensaje", mensaje);
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
@@ -75,6 +85,13 @@ public class Servlet_Login extends HttpServlet
                     RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
                     rd.forward(request, response);
                 }
+                else if ("No".equals(usuario.getVerificado()))
+                {
+                    mensaje = "Debes verificar tu correo antes de iniciar sesion.";
+                    request.setAttribute("mensaje", mensaje);
+                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+                    rd.forward(request, response);
+                }
                 else if ("Pendiente".equals(usuario.getEstado()))
                 {
                     mensaje = "Tu cuenta aun no ha sido aprobada.";
@@ -89,7 +106,7 @@ public class Servlet_Login extends HttpServlet
                     RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
                     rd.forward(request, response);
                 }
-                else // Aprobado
+                else // Aprobado y Verificado
                 {
                     HttpSession session = request.getSession();
                     session.setAttribute("usuario", usuario);

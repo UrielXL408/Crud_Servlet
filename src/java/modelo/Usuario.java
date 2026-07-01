@@ -9,6 +9,8 @@ public class Usuario
     private String correo;
     private String contrasena;
     private String estado;
+    private String token;
+    private String verificado;
 
     public Usuario()
     {
@@ -19,6 +21,8 @@ public class Usuario
         correo = "";
         contrasena = "";
         estado = "Pendiente";
+        token = "";
+        verificado = "No";
     }
 
     public Usuario(String nombre, String aPaterno, String aMaterno, String correo, String contrasena)
@@ -29,9 +33,11 @@ public class Usuario
         this.correo = correo;
         this.contrasena = contrasena;
         this.estado = "Pendiente";
+        this.token = "";
+        this.verificado = "No";
     }
 
-    public Usuario(int id, String nombre, String aPaterno, String aMaterno, String correo, String contrasena, String estado)
+    public Usuario(int id, String nombre, String aPaterno, String aMaterno, String correo, String contrasena, String estado, String token, String verificado)
     {
         this.id = id;
         this.nombre = nombre;
@@ -40,6 +46,8 @@ public class Usuario
         this.correo = correo;
         this.contrasena = contrasena;
         this.estado = estado;
+        this.token = token;
+        this.verificado = verificado;
     }
 
     public int getId()
@@ -70,6 +78,14 @@ public class Usuario
     {
         return estado;
     }
+    public String getToken()
+    {
+        return token;
+    }
+    public String getVerificado()
+    {
+        return verificado;
+    }
 
     public void setId(int id)
     {
@@ -98,5 +114,13 @@ public class Usuario
     public void setEstado(String estado)
     {
         this.estado = estado;
+    }
+    public void setToken(String token)
+    {
+        this.token = token;
+    }
+    public void setVerificado(String verificado)
+    {
+        this.verificado = verificado;
     }
 }
