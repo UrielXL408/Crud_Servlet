@@ -4,8 +4,24 @@
         <servlet-name>Servlet_Alumno</servlet-name>
         <servlet-class>control.Servlet_Alumno</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Servlet_login</servlet-name>
+        <servlet-class>control.Servlet_login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_Login</servlet-name>
+        <servlet-class>control.Servlet_Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet_Alumno</servlet-name>
         <url-pattern>/Servlet_Alumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_login</servlet-name>
+        <url-pattern>/Servlet_login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_Login</servlet-name>
+        <url-pattern>/Servlet_Login</url-pattern>
     </servlet-mapping>
 </web-app>

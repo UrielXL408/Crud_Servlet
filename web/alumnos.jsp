@@ -1,3 +1,11 @@
+<%
+    if (session.getAttribute("usuario") == null)
+    {
+        response.sendRedirect(request.getContextPath() + "/Servlet_Login");
+        return;
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="modelo.Alumno"%>
 <%@page import="dao.DAOAlumno"%>
